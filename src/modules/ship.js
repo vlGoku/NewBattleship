@@ -1,5 +1,7 @@
 'use strict'
 
+import { Gameboard } from "./gameboard";
+
 //Add property to save whereHit positions
 
 class Ship {

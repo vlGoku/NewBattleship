@@ -1,6 +1,6 @@
 "use strict";
 
-import { Ship } from "./ship";
+//import { Ship } from "./ship";
 
 class Gameboard {
   constructor(gameboardSize) {
@@ -9,6 +9,7 @@ class Gameboard {
     this.missedShots = [];
     this.allShipsSunk = false;
     this.gameboardSize = gameboardSize;
+    this.count = 0;
   }
 
   //creates a gameboard with a given size
@@ -52,18 +53,13 @@ class Gameboard {
       console.log("Das Schiff wurde verfehlt: " + x + " " + y);
       this.missedShots.push([x][y]);
     }
-    ship.isShipSunk();
+    this.areAllShipsSunk();
   }
 
   areAllShipsSunk() {
-    let i = 0;
-    for(const ship of this.ships){
-        if(ship.isSunk == true){
-            i++;
-            console.log("Ich bin hier");
-            
-        }
-    }
+    this.count++;
+    console.log("Ich funktioniere " + this.count);
+    
   }
 }
 
