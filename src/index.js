@@ -3,16 +3,28 @@ import "./styles.css";
 import { Ship } from "./modules/ship";
 import { Gameboard } from "./modules/gameboard";
 
-let newShip = new Ship("Carrier", 2, 5);
-let newShip2 = new Ship("Bomber", 3, 3);
+document.addEventListener('DOMContentLoaded', () => {
+    // Instanz des Gameboard-Objekts erstellen
+    const playerGameboard = new Gameboard(10);  // 10x10 Spielfeld
+    const computerGameboard = new Gameboard(10);
+  
+    // Spielfelder erstellen
+    playerGameboard.createGameboard('player-board', true);
+    computerGameboard.createGameboard('computer-board', false);
+  
+    // Spiel starten Button
+    const startButton = document.getElementById('start-game');
+    startButton.addEventListener('click', () => {
+      // Hier könnte Logik für das Starten des Spiels kommen
+      console.log('Spiel gestartet!');
+      computerGameboard.placeShipComputer();
 
-let newGameboard = new Gameboard(10);
-newGameboard.createGameboard();
-newGameboard.placeShip(newShip, 3, 7);
+      console.log(computerGameboard.gameboard);
 
-newGameboard.receiveAttack(3,7);
-newGameboard.receiveAttack(4,7);
+      startButton.disabled = true;
+    });
 
-newGameboard.areAllShipsSunk();
+  });
 
-console.log(newGameboard);
+
+

@@ -1,4 +1,106 @@
+/* Allgemeines Reset */
 * {
-    margin: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Grundlegendes Styling für die Seite */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* Header Styling */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #2a2a2a;
+}
+
+/* Spielfeld Container */
+#game-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  width: 90%;
+  max-width: 900px;
+}
+
+/* Board Styling */
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #333;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Spielfeld Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 40px); /* 10 Spalten */
+  grid-template-rows: repeat(10, 40px); /* 10 Reihen */
+  gap: 2px;
+  margin-top: 10px;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  background-color: #87ceeb; /* Standardfarbe für Wasser */
+  border: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+/* Styling für ein besetztes Feld (Schiff) */
+.cell.ship {
+  background-color: #2f4f4f; /* Schiffe mit einer anderen Farbe darstellen */
+}
+
+/* Zusätzliche Styling für Hover-Effekte oder interaktive Felder */
+.cell:hover {
+  background-color: #66c2ff;
+  cursor: pointer;
+}
+
+/* Start Button Styling */
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Footer Styling */
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+}
